@@ -4,30 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Library System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link href="homeBookSys-Style.css" rel="stylesheet" />
+    <script src="homeBookSys.js" defer></script>
   </head>
-  <body>
+  <body class="bg-gray-100">
     <main>
-      <article>
+      <div class="hero-img">
+        <div class="hero-txt text-center text-white">
+          <h1 style="font-size: 50px" class="mx-8">Home Library System</h1>
+          <button
+            type="button"
+            class="bg-green-700 font-bold text-white rounded pt-2 pb-2 px-2 py-2"
+          >
+            Get Started!
+          </button>
+        </div>
+      </div>
+      <article class="grid grid-cols-3">
         <section>
-          <h2>The Shelf:</h2>
-          <div class="the_shelf_container"></div>
-        </section>
-      </article>
-      <article>
-        <section>
-          <form>
-            <label><strong>Book Name:</strong></label>
-            <input type="text" placeholder="book_title" /><br />
-            <label><strong>Author:</strong></label>
-            <input type="text" placeholder="author_name" /><br />
-            <label><strong>Genre:</strong></label>
-            <select>
-              <option></option></select
-            ><br />
-            <label><strong>Page Numbers:</strong></label>
-            <input type="number" placeholder="number_of_pages" /><br />
-            <button type="button">Search</button>
+          <form
+            class="bg-white shadow-lg rounded px-10 pt-8 pb-10 mb-8 max-w-md mx-4"
+          >
+            <fieldset class="text-center">
+              <label class="block text-md font-large text-gray-700"
+                ><strong>Book Name:</strong></label
+              >
+              <input
+                id="book_title"
+                type="text"
+                placeholder="book_title"
+                class="mb-4 rounded border-indigo-500"
+                required
+              /><br />
+              <label class="block text-md font-large text-gray-700"
+                ><strong>Author:</strong></label
+              >
+              <input
+                id="author"
+                type="text"
+                placeholder="author_name"
+                class="mb-4 rounded border-indigo-500"
+                required
+              /><br />
+              <label class="block text-md font-large text-gray-700"
+                ><strong>Genre:</strong></label
+              >
+              <select
+                class="mb-4 px-12 rounded border-indigo-500"
+                id="genre_type"
+                required
+              >
+                <option>Science Fiction</option>
+                <option value="">Fantasy</option>
+                <option value="">Mystery</option>
+                <option value="">Non-Fiction</option>
+                <option value="">Fiction</option>
+                <option value="">Self-Help</option></select
+              ><br />
+              <label class="block text-large font-large text-gray-700"
+                ><strong>Page Numbers:</strong></label
+              >
+              <input
+                id="page_numbers"
+                type="number"
+                placeholder="number_of_pages"
+                class="mb-4 rounded border-indigo-500"
+                required
+              /><br />
+              <button
+                class="text-white font-bold bg-green-700 hover:bg-white-800 py-2 px-4 rounded"
+                type="button"
+                onclick="addBook()"
+              >
+                Add Book
+              </button>
+            </fieldset>
           </form>
+        </section>
+        <section>
+          <header class="text-center py-8">The Shelf:</header>
+          <div class="the_shelf_container">Current Book List in Library</div>
+          <span
+            >total number of books:
+            <p id="total_count">0</p></span
+          >
+        </section>
+        <section>
+          <header class="text-center py-8">The Dashboard</header>
+          <div class="dashboard_metrics">The Dashboard Area</div>
         </section>
       </article>
       <footer>Warcholak Labs - 2024</footer>
