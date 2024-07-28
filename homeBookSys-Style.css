@@ -5,3 +5,35 @@
   background-repeat: no-repeat;
   height: 20rem;
 }
+
+.shelf_container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.shelf_container #book_filter,
+#book_status {
+  color: black;
+  margin-right: 2rem;
+  border: none;
+  background-color: transparent;
+}
+
+#pagination_controls {
+  margin-top: 2rem;
+}
+
+#search {
+  background-color: transparent;
+  border: 0.1rem solid white;
+  border-radius: 0.2rem;
+  padding: 0.2rem 4rem;
+}
+
+#search_button {
+  border: 0.1rem solid white;
+  padding: 0.2rem 1rem;
+}
